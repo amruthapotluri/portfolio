@@ -3,33 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
     <title>Amrutha Potluri: Contact</title>
 </head>
 <body>
     <header>
         <nav>
-            <li><a href = "../index.html">Home</a></li>
-            <li><a href = "../projects/index.html">Projects</a></li>
-            <li><a href = "index.html">Contact</a></li>
-            <li><a href="https://github.com/amruthapotluri" target="_blank">GitHub Profile</a></li>
-            <li><a href = "../resume/index.html">Résumé</a></li>
+            <ul style="list-style: none; padding-inline-start: 0;">
+                <li><a href = "../index.html">Home</a></li>
+                <li><a href = "../projects/index.html">Projects</a></li>
+                <li><a href = "index.html">Contact</a></li>
+                <li><a href="https://github.com/amruthapotluri" target="_blank">GitHub Profile</a></li>
+                <li><a href = "../resume/index.html">Résumé</a></li>
+            </ul>
         </nav>
         <h1>Contact</h1>
     </header>
     <form action = mailto:apotluri@ucsd.edu method = POST enctype = "text/plain">
-        <div>
-            <label for="sender-email">Email:</label>
+        <label class="narrow-field">
+            Email:
             <input type="email" name="email" required>
-        </div>
-        <div>
-            <label for="subject-line">Subject:</label>
+        </label>
+        <label class="narrow-field">
+            Subject:
             <input name="subject">
-        </div>
-        <div>
-            <label for="message-body">Body:</label>
-            <textarea name="body" required></textarea>
-        </div>
-        <button>Submit</button>
+        </label>
+        <label class="wide-field">
+            Message:
+            <textarea name="body" rows="6" required></textarea>
+        </label>
+        <button>Send</button>
     </form>
 </body>
 </html>

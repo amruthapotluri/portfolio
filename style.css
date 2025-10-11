@@ -1,6 +1,177 @@
+:root {
+  --color-accent: oklch(65% 50% 0);
+  --color-nav-border: oklch(80% 3% 200);
+}
+
 body {
-  /* Set line height to 1.5 times the font size
-	   and use the OS’s UI font as the website font
-	 */
   font: 100%/1.5 system-ui;
+  max-width: 100ch;
+  margin-inline: auto;
+  padding-inline: 1em;
+  accent-color: var(--color-accent);
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+nav ul {
+  list-style: none;
+  padding-inline-start: 0;
+  margin: 0;
+  display: flex;
+  border-bottom: 1px solid var(--color-nav-border);
+  margin-bottom: 2em;
+}
+
+nav li {
+  flex: 1;
+}
+
+nav a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  padding: 0.5em;
+}
+
+nav a.current {
+  border-bottom: 0.4em solid var(--color-nav-border);
+  padding-bottom: 0.1em;
+}
+
+nav a:hover {
+  border-bottom: 0.4em solid var(--color-accent);
+  padding-bottom: 0.1em;
+}
+
+form input,
+form textarea,
+form button {
+  font: inherit;
+}
+
+form {
+  max-width: 700px;
+  margin-inline: left;
+  display: grid;
+  gap: 1.25em;
+}
+
+form label {
+  display: grid;
+  gap: 0.5em;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5em;
+}
+
+.narrow-field {
+  max-width: 500px;
+}
+
+.wide-field {
+  width: 100%;
+}
+
+form button {
+  max-width: 500px;
+  width: 100%;
+  padding: 0.8em;
+  box-sizing: border-box;
+  text-align: center; 
+  background-color: oklch(90% 3% 200);
+  border: 1px solid var(--color-nav-border);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1em;
+}
+
+.projects > article {
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+}
+
+.projects > article > h2 {
+  margin: 0;
+}
+
+body > hr {
+  display: none;
+}
+
+body > h1 + p {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #555;
+  max-width: 65ch;
+  margin-bottom: 2em;
+}
+
+body > section {
+  border-bottom: 1px solid var(--color-nav-border);
+  padding-bottom: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+body > section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+section h2 {
+  font-size: 1.8rem;
+  color: var(--color-accent);
+  margin-bottom: 1em;
+}
+
+section article {
+  margin-bottom: 2em;
+}
+
+article header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5em;
+}
+
+article h3, article header p {
+  margin: 0;
+}
+
+article h3 {
+  font-size: 1.3rem;
+}
+
+article header p {
+  font-style: italic;
+  color: #666;
+}
+
+article li, section > li {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 0.5em;
+}
+
+section:last-of-type > li {
+  list-style-type: none;
+  margin-left: 0;
 }
