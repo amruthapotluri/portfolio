@@ -1,6 +1,7 @@
 :root {
+  color-scheme: light dark;
   --color-accent: oklch(65% 50% 0);
-  --color-nav-border: oklch(80% 3% 200);
+  --color-nav-border: oklch(50% 10% 200 / 40%);
 }
 
 body {
@@ -20,21 +21,14 @@ h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
 }
 
-nav ul {
-  list-style: none;
-  padding-inline-start: 0;
-  margin: 0;
+nav {
   display: flex;
   border-bottom: 1px solid var(--color-nav-border);
   margin-bottom: 2em;
 }
 
-nav li {
-  flex: 1;
-}
-
 nav a {
-  display: block;
+  flex: 1;
   text-decoration: none;
   color: inherit;
   text-align: center;
@@ -49,11 +43,13 @@ nav a.current {
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   padding-bottom: 0.1em;
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
 form input,
 form textarea,
-form button {
+form button,
+select {
   font: inherit;
 }
 
@@ -94,6 +90,7 @@ form button {
   border: 1px solid var(--color-nav-border);
   border-radius: 4px;
   cursor: pointer;
+  color: #111;
 }
 
 .projects {
@@ -174,4 +171,11 @@ article li, section > li {
 section:last-of-type > li {
   list-style-type: none;
   margin-left: 0;
+}
+
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
 }
