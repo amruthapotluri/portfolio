@@ -179,3 +179,43 @@ section:last-of-type > li {
   right: 1rem;
   font-size: 80%;
 }
+
+#profile-stats dl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+#profile-stats dt {
+  grid-row: 1;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+#profile-stats dd {
+  grid-row: 2;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+summary {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::before {
+  content: '▶';
+  font-size: 0.8em;
+  margin-right: 0.5rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+details[open] > summary::before {
+  transform: rotate(90deg);
+}
