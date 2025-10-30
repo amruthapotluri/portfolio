@@ -1,5 +1,5 @@
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
-import { fetchJSON, renderProjects } from '../global.js';
+import { fetchJSON, renderProjects, BASE_PATH } from '../global.js';
 
 let selectedIndex = -1; 
 let arcGenerator = d3.arc()
@@ -116,7 +116,7 @@ if (searchInput) {
 
 (async () => {
     try {
-        let fetchedProjects = await fetchJSON('../lib/projects.json');
+        let fetchedProjects = await fetchJSON(`${BASE_PATH}lib/projects.json`);
         
         projects = fetchedProjects || []; 
 
