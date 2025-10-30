@@ -116,7 +116,7 @@ if (searchInput) {
 
 (async () => {
     try {
-        let fetchedProjects = await fetchJSON(`${BASE_PATH}lib/projects.json`);
+        let fetchedProjects = await fetchJSON(`/lib/projects.json`);
         
         projects = fetchedProjects || []; 
 
