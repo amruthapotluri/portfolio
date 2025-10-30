@@ -53,7 +53,8 @@ function renderPieChart(arcData) {
         .attr('fill', (d, idx) => colors(idx))
         .attr('class', (d, idx) => (idx === selectedIndex ? 'selected' : ''))
         .on('click', (event, d) => {
-            const clickedIndex = d.index;
+            const clickedYearLabel = d.data.label;
+            const clickedIndex = arcData.findIndex(a => a.data.label === clickedYearLabel);
             selectedIndex = selectedIndex === clickedIndex ? -1 : clickedIndex;
             applyAllFilters();
         });
