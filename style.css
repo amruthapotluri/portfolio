@@ -319,10 +319,10 @@ details[open] > summary::before {
 }
 
 .searchBar:focus {
-    border-color: #007bff;
-    outline: none;
-    color: canvastext !important;
+    color: canvastext !important; 
     font-weight: 500;
+    border-color: #007bff; 
+    outline: none;
 }
 
 .searchBar::placeholder {
