@@ -13,6 +13,22 @@ let query = '';
 let projects = [];
 const projectsContainer = document.querySelector('.projects');
 
+function getArcData(projectsGiven) {
+    let rolledData = d3.rollups(
+      projectsGiven,
+      (v) => v.length,
+      (d) => d.year,
+    );
+    rolledData.sort((a, b) => b[0].localeCompare(a[0]));
+    
+    let data = rolledData.map(([year, count]) => {
+      return { value: count, label: year };
+    });
+    
+    let arcData = sliceGenerator(data);
+    return arcData;
+}
+
 function renderAll(projectsToRender) {
     const titleElement = document.querySelector('.projects-title');
     if (titleElement) {
@@ -21,27 +37,12 @@ function renderAll(projectsToRender) {
     renderProjects(projectsToRender, projectsContainer, 'h2');
 }
 
-function renderPieChart(projectsGiven) {
+function renderPieChart(arcData) { 
     
-    let rolledData = d3.rollups(
-      projectsGiven,
-      (v) => v.length,
-      (d) => d.year,
-    );
-    
-    rolledData.sort((a, b) => b[0].localeCompare(a[0]));
-    
-    let data = rolledData.map(([year, count]) => {
-      return { value: count, label: year };
-    });
-
-    let arcData = sliceGenerator(data);
     let arcs = arcData.map((d) => arcGenerator(d));
 
     const svg = d3.select('#projects-pie-plot');
     svg.selectAll('path').remove(); 
-    
-    // FIX: Use D3 to definitively remove old list items and bindings
     d3.select('.legend').selectAll('li').remove(); 
 
     svg.selectAll('path')
@@ -86,25 +87,18 @@ function applyAllFilters() {
     }
 
     if (selectedIndex !== -1) {
-        let rolledData = d3.rollups(
-          projects,
-          (v) => v.length,
-          (d) => d.year,
-        );
-        let data = rolledData.map(([year, count]) => {
-          return { value: count, label: year };
-        });
-        let arcData = d3.pie().value((d) => d.value)(data);
-        
-        const selectedYear = arcData[selectedIndex].data.label;
+        let fullArcData = getArcData(projects); 
+        const selectedYear = fullArcData[selectedIndex].data.label;
 
         combinedFilteredProjects = combinedFilteredProjects.filter(project => 
             project.year === selectedYear
         );
     }
     
+    let finalArcData = getArcData(combinedFilteredProjects); 
+    
     renderAll(combinedFilteredProjects);
-    renderPieChart(combinedFilteredProjects);
+    renderPieChart(finalArcData);
 }
 
 const searchInput = document.querySelector('.searchBar');
@@ -120,7 +114,7 @@ if (searchInput) {
 
 (async () => {
     try {
-        let fetchedProjects = await fetchJSON('/portfolio/lib/projects.json');
+        let fetchedProjects = await fetchJSON('/portfolio/lib/projects.json'); 
         
         projects = fetchedProjects || []; 
 
