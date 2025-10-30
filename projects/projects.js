@@ -1,7 +1,7 @@
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
 import { fetchJSON, renderProjects } from '../global.js';
 
-let selectedIndex = -1; 
+let selectedYearLabel = null; 
 let arcGenerator = d3.arc()
     .innerRadius(0)
     .outerRadius(50);
@@ -51,11 +51,12 @@ function renderPieChart(arcData) {
         .append('path')
         .attr('d', d => arcGenerator(d)) 
         .attr('fill', (d, idx) => colors(idx))
-        .attr('class', (d, idx) => (idx === selectedIndex ? 'selected' : ''))
+        .attr('class', (d) => (d.data.label === selectedYearLabel ? 'selected' : ''))
         .on('click', (event, d) => {
-            const clickedYearLabel = d.data.label;
-            const clickedIndex = arcData.findIndex(a => a.data.label === clickedYearLabel);
-            selectedIndex = selectedIndex === clickedIndex ? -1 : clickedIndex;
+            
+            const clickedLabel = d.data.label;
+            selectedYearLabel = selectedYearLabel === clickedLabel ? null : clickedLabel;
+            
             applyAllFilters();
         });
 
@@ -65,7 +66,7 @@ function renderPieChart(arcData) {
         .data(arcData) 
         .enter()
         .append('li')
-        .attr('class', (d, idx) => `legend-item ${idx === selectedIndex ? 'selected' : ''}`)
+        .attr('class', (d) => `legend-item ${d.data.label === selectedYearLabel ? 'selected' : ''}`)
         .attr('style', (d, idx) => `--color:${colors(idx)}`) 
         .html((d) => `
           <span class="swatch"></span> 
@@ -85,12 +86,9 @@ function applyAllFilters() {
         });
     }
 
-    if (selectedIndex !== -1) {
-        let fullArcData = getArcData(projects); 
-        const selectedYear = fullArcData[selectedIndex].data.label;
-
+    if (selectedYearLabel) { 
         combinedFilteredProjects = combinedFilteredProjects.filter(project => 
-            project.year === selectedYear
+            project.year === selectedYearLabel
         );
     }
     
