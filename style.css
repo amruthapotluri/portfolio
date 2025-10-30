@@ -320,8 +320,11 @@ details[open] > summary::before {
 .searchBar:focus {
     border-color: #007bff;
     outline: none;
+    color: canvastext;
+    font-weight: 500;
 }
 
 .searchBar::placeholder {
     color: #888;
+    color: transparent;
 }
