@@ -12,7 +12,7 @@ let pages = [
   { url: 'resume/', title: 'Résumé' }
 ];
 
-const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1") ? "/" : "/portfolio/";
+export const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1") ? "/" : "/portfolio/";
 
 let nav = document.createElement('nav');
 document.body.prepend(nav);
@@ -102,7 +102,7 @@ export function renderProjects(projectArray, containerElement, headingLevel = 'h
     const article = document.createElement('article');  
     article.innerHTML = `
       <${headingLevel}>${singleProject.title}</${headingLevel}>
-      <img src="${singleProject.image}" alt="${singleProject.title}"> 
+      <img src="${singleProject.image}" alt="${singleProject.title}">
       <div class="project-content-footer"> 
           <p>${singleProject.description}</p>
           <span class="project-year">c. ${singleProject.year}</span>
