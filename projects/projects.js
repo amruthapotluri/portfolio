@@ -1,5 +1,5 @@
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
-import { fetchJSON, renderProjects, BASE_PATH } from '../global.js';
+import { fetchJSON, renderProjects } from '../global.js';
 
 let selectedIndex = -1; 
 let arcGenerator = d3.arc()
@@ -29,6 +29,8 @@ function renderPieChart(projectsGiven) {
       (d) => d.year,
     );
     
+    rolledData.sort((a, b) => b[0].localeCompare(a[0]));
+    
     let data = rolledData.map(([year, count]) => {
       return { value: count, label: year };
     });
@@ -38,7 +40,9 @@ function renderPieChart(projectsGiven) {
 
     const svg = d3.select('#projects-pie-plot');
     svg.selectAll('path').remove(); 
-    d3.select('.legend').html(''); 
+    
+    // FIX: Use D3 to definitively remove old list items and bindings
+    d3.select('.legend').selectAll('li').remove(); 
 
     svg.selectAll('path')
         .data(arcData) 
@@ -116,7 +120,7 @@ if (searchInput) {
 
 (async () => {
     try {
-        let fetchedProjects = await fetchJSON(`${BASE_PATH}lib/projects.json`);
+        let fetchedProjects = await fetchJSON('/portfolio/lib/projects.json');
         
         projects = fetchedProjects || []; 
 
