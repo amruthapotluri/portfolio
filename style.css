@@ -331,3 +331,216 @@ details[open] > summary::before {
 .searchBar:focus::placeholder {
     color: transparent;
 }
+
+.stats dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1.25rem;
+  max-width: 300px;
+  margin-block: 1rem;
+}
+
+.stats dt {
+  font-weight: bold;
+  text-align: right;
+  grid-column: 1;
+}
+
+.stats dd {
+  margin: 0;
+  grid-column: 2;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color, #eee);
+  border-radius: 8px;
+  background-color: var(--background-color-secondary, #fff);
+  margin-block: 1rem;
+}
+
+.stat-block {
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 0.8em;
+  color: var(--text-color-secondary, #666);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.stat-value {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: var(--text-color, #333);
+}
+
+#stats h2 {
+  font-size: 1.8em;
+  margin-bottom: 1rem;
+  color: var(--text-color, #333);
+}
+
+:root {
+  --background-color-secondary: #fff;
+  --border-color: #eee;
+  --text-color: #333;
+  --text-color-secondary: #666;
+}
+
+:root[style*="color-scheme: dark"] {
+  --background-color-secondary: #2a2a2a;
+  --border-color: #444;
+  --text-color: #eee;
+  --text-color-secondary: #bbb;
+}
+
+.gridlines .tick line {
+  stroke: var(--border-color, #eee);
+  stroke-opacity: 0.7;
+  stroke-dasharray: 2, 2;
+}
+
+.gridlines .domain {
+  stroke: none;
+}
+
+svg text {
+  fill: var(--text-color-secondary, #666);
+  font-size: 0.75em;
+  font-family: var(--font-family-body, sans-serif);
+}
+
+svg .domain {
+  stroke: var(--text-color-secondary, #666);
+}
+
+svg .tick line {
+  stroke: var(--text-color-secondary, #666);
+}
+
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1.25rem;
+  margin: 0;
+  transition-duration: 200ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info dt {
+  font-weight: bold;
+  text-align: right;
+  grid-column: 1;
+  color: var(--text-color-secondary, #666);
+}
+
+dl.info dd {
+  margin: 0;
+  grid-column: 2;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.tooltip {
+  position: fixed;
+  padding: 1rem;
+  background-color: var(--background-color-secondary, #fff);
+  border: 1px solid var(--border-color, #eee);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  background-color: var(--background-color-translucent, rgba(255, 255, 255, 0.8));
+  pointer-events: none;
+  transform: translate(10px, 10px); 
+}
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+  stroke: var(--text-color, #333);
+  stroke-width: 2px;
+}
+
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1.25rem;
+  margin: 0;
+  transition-duration: 200ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info dt {
+  font-weight: bold;
+  text-align: right;
+  grid-column: 1;
+  color: var(--text-color-secondary, #666);
+}
+
+dl.info dd {
+  margin: 0;
+  grid-column: 2;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.tooltip {
+  position: fixed;
+  padding: 1rem;
+  border: 1px solid var(--border-color, #eee);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  background-color: var(--background-color-translucent, rgba(255, 255, 255, 0.8));
+  pointer-events: none;
+  transform: translate(10px, 10px); 
+}
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+  stroke: var(--text-color, #333);
+  stroke-width: 2px;
+}
+
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8;
+  }
+}
+
+.selection {
+  fill: steelblue;
+  fill-opacity: 0.1;
+  stroke: black;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+
+circle.selected {
+  fill: #ff6b6b;
+  fill-opacity: 1 !important;
+}
