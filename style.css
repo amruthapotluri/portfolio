@@ -351,14 +351,41 @@ details[open] > summary::before {
   grid-column: 2;
 }
 
+:root {
+  color-scheme: light dark;
+  --color-accent: oklch(65% 50% 0);
+  --color-nav-border: oklch(50% 10% 200 / 40%);
+
+  --background-color-secondary: #fff;
+  --border-color: #eee;
+  --text-color: #333;
+  --text-color-secondary: #666;
+}
+
+:root[style="color-scheme: dark;"] {
+  --background-color-secondary: #2a2a2a;
+  --border-color: #444;
+  --text-color: #eee;
+  --text-color-secondary: #bbb;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[style="color-scheme: light dark;"] {
+    --background-color-secondary: #2a2a2a;
+    --border-color: #444;
+    --text-color: #eee;
+    --text-color-secondary: #bbb;
+  }
+}
+
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   padding: 1.5rem;
-  border: 1px solid var(--border-color, #eee);
+  border: 1px solid var(--border-color);
+  background-color: var(--background-color-secondary);
   border-radius: 8px;
-  background-color: var(--background-color-secondary, #fff);
   margin-block: 1rem;
 }
 
@@ -368,7 +395,7 @@ details[open] > summary::before {
 
 .stat-label {
   font-size: 0.8em;
-  color: var(--text-color-secondary, #666);
+  color: var(--text-color-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 0.25rem;
@@ -377,27 +404,13 @@ details[open] > summary::before {
 .stat-value {
   font-size: 1.8em;
   font-weight: bold;
-  color: var(--text-color, #333);
+  color: var(--text-color);
 }
 
 #stats h2 {
   font-size: 1.8em;
   margin-bottom: 1rem;
-  color: var(--text-color, #333);
-}
-
-:root {
-  --background-color-secondary: #fff;
-  --border-color: #eee;
-  --text-color: #333;
-  --text-color-secondary: #666;
-}
-
-:root[style*="color-scheme: dark"] {
-  --background-color-secondary: #2a2a2a;
-  --border-color: #444;
-  --text-color: #eee;
-  --text-color-secondary: #bbb;
+  color: var(--text-color);
 }
 
 .gridlines .tick line {
