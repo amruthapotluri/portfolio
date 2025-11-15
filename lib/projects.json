@@ -1,25 +1,25 @@
 [
     {
         "title": "GitHub Site",
-        "year": "2024",
+        "year": 2024,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "I created my own GitHub Site to display my portfolio."
     },
     {
         "title": "CSS",
-        "year": "2025",
+        "year": 2025,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "I styled my site with CSS, marking my first experience using CSS."
     },
     {
         "title": "JavaScript",
-        "year": "2025",
+        "year": 2025,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "I added interactive elements to the site, like the ability to switch between light and dark mode, to my GitHub site."
     },
     {
         "title": "JavaScript II",
-        "year": "2024",
+        "year": 2024,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Added more interactive elements to my site using JavaScript."
     },
@@ -32,43 +32,43 @@
     },
     {
         "title": "Libero sunt earum recusandae?",
-        "year": "2022",
+        "year": 2022,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Dicta fugiat soluta corporis. Inventore molestias esse repellendus veritatis iure praesentium sit itaque corporis, ratione odio maiores nemo nulla eos ex vero quos sapiente maxime officia quaerat unde sed placeat."
     },
     {
         "title": "Voluptate consequuntur ipsam impedit.",
-        "year": "2022",
+        "year": 2022,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Eum a ex qui accusamus tempore rerum fugiat, laboriosam voluptatum nam! Iusto placeat eligendi dolores sint et? Deserunt aliquam facere voluptatibus error incidunt. Fugit facere quas, veniam eveniet consequuntur ducimus!"
     },
     {
         "title": "Perspiciatis pariatur architecto totam?",
-        "year": "2025",
+        "year": 2025,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Corporis distinctio consectetur provident accusantium totam repellendus aliquid debitis amet! Laboriosam porro facilis provident? Nihil reprehenderit delectus quia ipsum laborum voluptatibus odio eum in, debitis explicabo veniam odit reiciendis doloremque."
     },
     {
         "title": "Quidem itaque iure minima?",
-        "year": "2025",
+        "year": 2025,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Necessitatibus doloribus ipsum, quam ex quasi placeat iste magnam repellat rerum quisquam nesciunt quos nisi laboriosam neque, dolor obcaecati explicabo molestiae nihil velit! Ut, obcaecati dolorem. Culpa pariatur nemo fuga."
     },
     {
         "title": "Explicabo iure nulla sit!",
-        "year": "2024",
+        "year": 2024,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Eos distinctio nisi praesentium adipisci quasi! Itaque nobis asperiores, repudiandae beatae ipsa mollitia cupiditate ad! Nam dolore dolorem asperiores, impedit quo pariatur tempora voluptates temporibus doloremque quaerat, iure, officia voluptate."
     },
     {
         "title": "Cupiditate in non molestiae?",
-        "year": "2025",
+        "year": 2025,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Ut saepe harum aliquam labore laudantium dolorum, quam exercitationem, sunt quibusdam neque fugiat consequatur debitis magni temporibus distinctio, porro quisquam nam magnam optio. Itaque maxime odio esse ad, ratione dolor!"
     },
     {
         "title": "Ab omnis tempora magnam.",
-        "year": "2023",
+        "year": 2023,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Reiciendis ut temporibus quasi, accusamus vitae illo molestias recusandae excepturi fugit cumque distinctio repellendus sequi similique fuga quas cum dolore modi aliquid suscipit consectetur maiores quidem doloribus? Repudiandae, a veritatis."
     }
