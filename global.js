@@ -97,18 +97,18 @@ export async function fetchJSON(url) {
   }
 }
 
-export function renderProjects(projectArray, containerElement, headingLevel = 'h2') {
-  containerElement.innerHTML = '';
+export function renderProjects(projectArray, containerElement, headingLevel = "h2") {
+  containerElement.innerHTML = "";
   for (const singleProject of projectArray) {
-    const article = document.createElement('article');  
-    article.innerHTML = `
-      <${headingLevel}>${singleProject.title}</${headingLevel}>
-      <img src="${singleProject.image}" alt="${singleProject.title}">
-      <div class="project-content-footer"> 
-          <p>${singleProject.description}</p>
-          <span class="project-year">c. ${singleProject.year}</span>
-      </div>
-    `;
+    const article=document.createElement("article");
+    let titleMarkup=singleProject.url
+      ? `<${headingLevel}><a href="${singleProject.url}" target="_blank" rel="noopener">${singleProject.title}</a></${headingLevel}>`: `<${headingLevel}>${singleProject.title}</${headingLevel}>`;
+    article.innerHTML =titleMarkup +
+      `<img src="${singleProject.image}" alt="${singleProject.title}">
+       <div class="project-content-footer">
+         <p>${singleProject.description}</p>
+         <span class="project-year">c. ${singleProject.year}</span>
+       </div>`;
     containerElement.appendChild(article);
   }
 }

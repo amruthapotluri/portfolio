@@ -331,3 +331,11 @@ details[open] > summary::before {
 .searchBar:focus::placeholder {
     color: transparent;
 }
+
+.projects article img {
+  width: 320px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}

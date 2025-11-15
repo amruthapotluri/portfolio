@@ -19,7 +19,7 @@ function getArcData(projectsGiven) {
       (v) => v.length,
       (d) => d.year,
     );
-    rolledData.sort((a, b) => b[0].localeCompare(a[0]));
+    rolledData.sort((a,b)=>b[0]-a[0]);
     
     let data = rolledData.map(([year, count]) => {
       return { value: count, label: year };
@@ -106,7 +106,7 @@ if (searchInput) {
 
 (async () => {
     try {
-        let fetchedProjects = await fetchJSON('/portfolio/lib/projects.json'); 
+        let fetchedProjects = await fetchJSON('/../lib/projects.json'); 
         
         projects = fetchedProjects || []; 
 

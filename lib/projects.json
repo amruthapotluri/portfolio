@@ -24,10 +24,11 @@
         "description": "Added more interactive elements to my site using JavaScript."
     },
     {
-        "title": "Maiores dolore voluptatibus sed!",
-        "year": "2023",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Voluptates molestiae, ex voluptate dolor sit maiores suscipit quisquam nemo odit explicabo, nesciunt commodi. Sequi velit consequatur, ipsum ut, nihil in, aut odit architecto hic ullam sit totam officia quae."
+        "title": "Boston Bike Traffic Visualization",
+        "year": 2025,
+        "image": "../images/bikewatching.png",
+        "description": "An interactive app visualizing bike traffic patterns in the Boston area using D3.js.",
+        "url": "https://amruthapotluri.github.io/bikewatching/"
     },
     {
         "title": "Libero sunt earum recusandae?",
