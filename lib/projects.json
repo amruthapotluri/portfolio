@@ -1,3 +1,4 @@
+@ -0,0 +1,74 @@
 [
     {
         "title": "GitHub Site",
@@ -23,13 +24,13 @@
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Added more interactive elements to my site using JavaScript."
     },
-    // {
-    //     "title": "Boston Bike Traffic Visualization",
-    //     "year": "2025",
-    //     // "url": "https://amruthapotluri.github.io/boston-bike-app/", 
-    //     "image": "path/to/your/screenshot.png", 
-    //     "description": "An interactive data visualization application built with D3.js, showing bike traffic trends and patterns across the Boston metropolitan area."
-    // },
+    {
+        "title": "Boston Bike Traffic Visualization",
+        "year": "2025",
+        "url": "https://amruthapotluri.github.io/boston-bike-app/", 
+        "image": "../images/bikewatching.png", 
+        "description": "An interactive data visualization application built with D3.js, showing bike traffic trends and patterns across the Boston metropolitan area."
+    },
     {
         "title": "Libero sunt earum recusandae?",
         "year": "2022",

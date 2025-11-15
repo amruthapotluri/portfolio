@@ -76,19 +76,24 @@ function renderPieChart(arcData) {
 }
 
 function applyAllFilters() {
+    
     let combinedFilteredProjects = projects; 
+
     if (query) {
         combinedFilteredProjects = combinedFilteredProjects.filter((project) => {
             let values = Object.values(project).join('\n').toLowerCase();
             return values.includes(query);
         });
     }
-    let finalArcData = getArcData(combinedFilteredProjects);
+
     if (selectedYearLabel) { 
         combinedFilteredProjects = combinedFilteredProjects.filter(project => 
             project.year === selectedYearLabel
         );
     }
+    
+    let finalArcData = getArcData(combinedFilteredProjects); 
+    
     renderAll(combinedFilteredProjects);
     renderPieChart(finalArcData);
 }
@@ -106,7 +111,7 @@ if (searchInput) {
 
 (async () => {
     try {
-        let fetchedProjects = await fetchJSON('/portfolio/lib/projects.json'); 
+        let fetchedProjects = await fetchJSON('../lib/projects.json'); 
         
         projects = fetchedProjects || []; 
 
