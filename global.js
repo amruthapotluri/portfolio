@@ -100,10 +100,7 @@ export async function fetchJSON(url) {
 export function renderProjects(projectArray, containerElement, headingLevel = 'h2') {
   containerElement.innerHTML = '';
   for (const singleProject of projectArray) {
-    const article = document.createElement('article');
-    const titleContent = singleProject.url ? 
-        `<a href="${singleProject.url}" target="_blank">${singleProject.title}</a>` :
-        singleProject.title;
+    const article = document.createElement('article');  
     article.innerHTML = `
       <${headingLevel}>${singleProject.title}</${headingLevel}>
       <img src="${singleProject.image}" alt="${singleProject.title}">
